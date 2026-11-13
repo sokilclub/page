@@ -17,11 +17,15 @@
   main { padding:16px; max-width:640px; margin:0 auto; }
   .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px; margin-bottom:12px; }
   .card h2 { margin:0 0 8px; font-size:16px; }
-  .row { display:flex; justify-content:space-between; padding:6px 0; border-top:1px solid var(--line); font-size:15px; }
+  .row { display:flex; justify-content:space-between; gap:12px; padding:6px 0; border-top:1px solid var(--line); font-size:15px; }
   .row:first-of-type { border-top:0; }
   .muted { color:var(--muted); font-size:13px; }
   nav { display:flex; gap:8px; overflow-x:auto; padding:12px 16px; }
-  nav span { white-space:nowrap; padding:8px 12px; border:1px solid var(--line); border-radius:20px; font-size:14px; background:var(--card); }
+  nav button { white-space:nowrap; padding:10px 14px; border:1px solid var(--line); border-radius:20px; font-size:14px;
+               background:var(--card); color:var(--fg); cursor:pointer; font-family:inherit; }
+  nav button.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+  section { display:none; }
+  section.active { display:block; }
 </style>
 </head>
 <body>
@@ -29,28 +33,98 @@
   <h1>СК «Сокіл»: залучення учнів</h1>
   <div class="test">ТЕСТ: усі цифри вигадані, це перевірка сторінки</div>
 </header>
-<nav>
-  <span>Маркетинг</span><span>Контент</span><span>Реклама</span><span>Заявки</span>
-  <span>Комунікація</span><span>Пробне тренування</span><span>Постійний учень</span>
+<nav id="tabs">
+  <button data-tab="home" class="active">Головна</button>
+  <button data-tab="marketing">Маркетинг</button>
+  <button data-tab="content">Контент</button>
+  <button data-tab="ads">Реклама</button>
+  <button data-tab="leads">Заявки</button>
+  <button data-tab="comms">Комунікація</button>
+  <button data-tab="trial">Пробне тренування</button>
+  <button data-tab="regular">Постійний учень</button>
 </nav>
 <main>
-  <div class="card">
-    <h2>Сьогодні</h2>
-    <div class="row"><span>Виконано</span><span>2</span></div>
-    <div class="row"><span>Заплановано на сьогодні</span><span>3</span></div>
-    <div class="row"><span>Прострочено</span><span>1</span></div>
-  </div>
-  <div class="card">
-    <h2>Картка оголошення</h2>
-    <div class="row"><span>Остання публікація</span><span>—</span></div>
-    <div class="row"><span>Рекламна кампанія</span><span>зупинена</span></div>
-    <div class="row"><span>Учнів на пробному</span><span>0</span></div>
-    <div class="row"><span>Постійних учнів</span><span>0</span></div>
-    <div class="row"><span>Книга</span><span>—</span></div>
-    <div class="row"><span>Відеокурс</span><span>Заплановано, не розпочато</span></div>
-    <div class="row"><span>План контенту</span><span>—</span></div>
-  </div>
+  <section id="home" class="active">
+    <div class="card">
+      <h2>Сьогодні</h2>
+      <div class="row"><span>Виконано</span><span>2</span></div>
+      <div class="row"><span>Заплановано на сьогодні</span><span>3</span></div>
+      <div class="row"><span>Прострочено</span><span>1</span></div>
+    </div>
+    <div class="card">
+      <h2>Картка оголошення</h2>
+      <div class="row"><span>Остання публікація</span><span>—</span></div>
+      <div class="row"><span>Рекламна кампанія</span><span>зупинена</span></div>
+      <div class="row"><span>Учнів на пробному</span><span>0</span></div>
+      <div class="row"><span>Постійних учнів</span><span>0</span></div>
+      <div class="row"><span>Книга</span><span>—</span></div>
+      <div class="row"><span>Відеокурс</span><span>Заплановано, не розпочато</span></div>
+      <div class="row"><span>План контенту</span><span>—</span></div>
+    </div>
+  </section>
+
+  <section id="marketing">
+    <div class="card"><h2>Маркетинг</h2>
+      <p class="muted">Дані з'являться пізніше. Тут буде загальна картина: цілі, підписники каналу, динаміка.</p></div>
+  </section>
+
+  <section id="content">
+    <div class="card"><h2>Контент на сьогодні (тест)</h2>
+      <div class="row"><span>Сценарій відео</span><span>Заплановано на сьогодні</span></div>
+      <div class="row"><span>Пост у каналі</span><span>Виконано</span></div>
+      <div class="row"><span>Таймлайн ролика</span><span>Прострочено</span></div>
+    </div>
+  </section>
+
+  <section id="ads">
+    <div class="card"><h2>Реклама (тест)</h2>
+      <div class="row"><span>Кампанія</span><span>зупинена</span></div>
+      <div class="row"><span>Тижневий висновок</span><span>з'явиться у місяці 3</span></div>
+      <p class="muted">Агент рекламою не керує: лише аналізує й радить.</p>
+    </div>
+  </section>
+
+  <section id="leads">
+    <div class="card"><h2>Заявки</h2>
+      <p class="muted">Дані з'являться пізніше (місяць 2).</p></div>
+  </section>
+
+  <section id="comms">
+    <div class="card"><h2>Комунікація</h2>
+      <p class="muted">Дані з'являться пізніше. Агент готує чернетки, надсилає лише тренер.</p></div>
+  </section>
+
+  <section id="trial">
+    <div class="card"><h2>Пробне тренування</h2>
+      <p class="muted">Дані з'являться пізніше (місяць 2).</p></div>
+  </section>
+
+  <section id="regular">
+    <div class="card"><h2>Постійний учень</h2>
+      <p class="muted">Дані з'являться пізніше (місяць 2).</p></div>
+  </section>
+
   <p class="muted">Тестова версія. Дата оновлення: 13.11.2026.</p>
 </main>
+<script>
+(function () {
+  var buttons = document.querySelectorAll('#tabs button');
+  var sections = document.querySelectorAll('main section');
+  function show(id) {
+    var found = false;
+    sections.forEach(function (s) { if (s.id === id) found = true; });
+    if (!found) id = 'home';
+    sections.forEach(function (s) { s.classList.toggle('active', s.id === id); });
+    buttons.forEach(function (b) { b.classList.toggle('active', b.dataset.tab === id); });
+    try { localStorage.setItem('tab', id); } catch (e) {}
+  }
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { show(b.dataset.tab); });
+  });
+  var saved = 'home';
+  try { saved = localStorage.getItem('tab') || 'home'; } catch (e) {}
+  show(saved);
+})();
+</script>
 </body>
 </html>
