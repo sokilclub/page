@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>СК «Сокіл»: залучення учнів</title>
+<style>
+  :root { --bg:#f6f6f4; --fg:#1b1b1b; --card:#fff; --muted:#666; --accent:#b3261e; --line:#e2e2de; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#141414; --fg:#f0f0ee; --card:#1f1f1f; --muted:#a0a0a0; --accent:#ef6a62; --line:#333; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background:var(--bg); color:var(--fg); }
+  header { padding:16px; border-bottom:1px solid var(--line); }
+  h1 { margin:0; font-size:20px; }
+  .test { margin-top:8px; padding:8px 12px; background:var(--accent); color:#fff; border-radius:8px; font-size:14px; }
+  main { padding:16px; max-width:640px; margin:0 auto; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px; margin-bottom:12px; }
+  .card h2 { margin:0 0 8px; font-size:16px; }
+  .row { display:flex; justify-content:space-between; padding:6px 0; border-top:1px solid var(--line); font-size:15px; }
+  .row:first-of-type { border-top:0; }
+  .muted { color:var(--muted); font-size:13px; }
+  nav { display:flex; gap:8px; overflow-x:auto; padding:12px 16px; }
+  nav span { white-space:nowrap; padding:8px 12px; border:1px solid var(--line); border-radius:20px; font-size:14px; background:var(--card); }
+</style>
+</head>
+<body>
+<header>
+  <h1>СК «Сокіл»: залучення учнів</h1>
+  <div class="test">ТЕСТ: усі цифри вигадані, це перевірка сторінки</div>
+</header>
+<nav>
+  <span>Маркетинг</span><span>Контент</span><span>Реклама</span><span>Заявки</span>
+  <span>Комунікація</span><span>Пробне тренування</span><span>Постійний учень</span>
+</nav>
+<main>
+  <div class="card">
+    <h2>Сьогодні</h2>
+    <div class="row"><span>Виконано</span><span>2</span></div>
+    <div class="row"><span>Заплановано на сьогодні</span><span>3</span></div>
+    <div class="row"><span>Прострочено</span><span>1</span></div>
+  </div>
+  <div class="card">
+    <h2>Картка оголошення</h2>
+    <div class="row"><span>Остання публікація</span><span>—</span></div>
+    <div class="row"><span>Рекламна кампанія</span><span>зупинена</span></div>
+    <div class="row"><span>Учнів на пробному</span><span>0</span></div>
+    <div class="row"><span>Постійних учнів</span><span>0</span></div>
+    <div class="row"><span>Книга</span><span>—</span></div>
+    <div class="row"><span>Відеокурс</span><span>Заплановано, не розпочато</span></div>
+    <div class="row"><span>План контенту</span><span>—</span></div>
+  </div>
+  <p class="muted">Тестова версія. Дата оновлення: 13.11.2026.</p>
+</main>
+</body>
+</html>
